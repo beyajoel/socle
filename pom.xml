@@ -17,18 +17,21 @@
 
 	<properties>
 		<java.version>18</java.version>
-		<org.junit.jupiter.version>5.9.0</org.junit.jupiter.version>
-		<org.testcontainers.version>1.17.5</org.testcontainers.version>
+		<spring-cloud.version>2021.0.4</spring-cloud.version>
 		<org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
+		<org.junit.jupiter.version>5.9.0</org.junit.jupiter.version>
 		<org.projectlombok.version>1.18.24</org.projectlombok.version>
-		<lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+		<org.testcontainers.version>1.17.5</org.testcontainers.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<com.fasterxml.jackson.version>2.13.4.2</com.fasterxml.jackson.version>
+		<lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
 	</properties>
 
 	<modules>
 		<module>../product-service</module>
 		<module>../order-service</module>
 		<module>../inventory-service</module>
+		<module>../discovery-server</module>
 	</modules>
 
 	<dependencyManagement>
@@ -37,6 +40,13 @@
 				<groupId>org.testcontainers</groupId>
 				<artifactId>testcontainers-bom</artifactId>
 				<version>${org.testcontainers.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
